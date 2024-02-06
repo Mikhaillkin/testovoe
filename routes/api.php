@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Api\ReportController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('reports')->group(function () {
-    Route::get('student-subject-grades',[ReportController::class,'getStudentSubjectGrades']);
-    Route::get('top-students-by-subject',[ReportController::class,'getTopStudentsBySubject']);
+    Route::post('avg-grade-student-by-subject',[ReportController::class,'getAvgGradeStudentBySubject']);
+    Route::get('top-students-by-subjects',[ReportController::class,'getTopStudentsBySubjects']);
     Route::get('best-teachers-by-subject',[ReportController::class,'getTeachersBySubject']);
 });
